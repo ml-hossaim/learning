@@ -1,146 +1,1200 @@
-<!DOCTYPE html>
+<!DOCTYPE html scroll-behavior: smooth;>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>card</title>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        padding: 23px;
-        background-color: rgb(64, 84, 84);
-      }
-      #card1 {
-        display: flex;
-      }
-      #card {
-        background-color: rgb(255, 255, 255);
-        height: 375px;
-        width: 225px;
-        border-radius: 7px;
-        margin: 3px;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ui-monospace;
+}
+body,
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
 
-      #card img {
-        width: 215px;
-        margin: 5px;
-        border-radius: 5px;
-      }
-      #capsol {
-        margin: 5px 10px;
-      }
-      #capsol span {
-        border: 1.5px solid black;
-        padding: 4px 8px;
-        border-radius: 5px;
-        font-size: 10px;
-        font-weight: 200;
-      }
-      #content {
-        margin: 9px;
-        font-size: 13px;
-      }
-      #content h1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 3;
-      }
-      #btnb {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      #btnb button {
-        padding: 7px;
-        margin: 3px;
-        border-radius: 6px;
-        border: none;
-        background-color: rgb(193, 217, 240);
-        color: rgb(73, 73, 163);
-      }
+.navbar {
+  top: 0;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  margin: 20px;
+  font-size: 25px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navbar h1 {
+  margin: 20px 0px 20px 30px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #f900e0;
+}
+.navbar h1 a {
+  color: #ff00b3;
+}
+.navbar a:hover {
+  color: #ff0000;
+}
+
+.main-home {
+  width: 80vw;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.intro {
+  width: 80%;
+}
+.intro button a{
+  color: black;
+  text-decoration: none;
+
+}
+.ttc {
+  visibility: collapse;
+}
+.intro h2 {
+  font-size: 46px;
+  text-transform: uppercase;
+  margin: 20px 10px 10px 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 60px;
+}
+
+.name-color {
+  color: #ff0000;
+  font-size: 60px;
+}
+.name-color2 {
+  color: #ff9100;
+  font-size: 50px;
+}
+.intro p {
+  margin: 40px 10px 10px 10px;
+  font-size: 25px;
+  color: #ff0000;
+}
+
+.btn button {
+  font-weight: bolder;
+  padding: 2px;
+  font-size: 17px;
+  height: 44px;
+  width: 117px;
+  background-color: #fbff02;
+  margin: 10px 20px 10px 10px;
+  border-radius: 35px;
+  border: none;
+}
+.btn a:hover {
+  color: #000000;
+}
+.btn button:hover {
+  background-color: aqua;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slider {
+  margin: 50px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* position: relative; */
+  display: flex;
+}
+
+.slider:before,
+.slider:after {
+  /* position: absolute;
+    top: 0; */
+  content: "";
+  z-index: 2;
+}
+
+/* .slider:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.525), white);
+  }
+  
+  .slider:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.512), white);
+  } */
+
+.slider:hover .main-slide {
+  animation-play-state: paused;
+}
+
+.main-slide {
+  background-color: #fbff02;
+  font-size: 30px;
+  display: flex;
+  animation: 10000ms slide infinite linear;
+}
+
+.main-slide li {
+  list-style-type: none;
+  margin: 10px;
+  color: #000000;
+}
+
+.service {
+  width: 80vw;
+  height: 90%;
+  margin: 0px auto 10px auto;
+  padding: 150px auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.items-services {
+  border: 1px solid rgb(222, 59, 59);
+  margin: 5px;
+}
+
+.services-sec {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 5px;
+}
+
+.services-sec h1 {
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 20px 0px;
+  color: #9c007d;
+}
+.services-sec p {
+  font-size: 22px;
+  font-weight: lighter;
+  margin: 10px;
+}
+
+.we-provide {
+  width: 80vw;
+  margin: 100px auto 20px auto;
+  justify-content: center;
+  display: flex;
+}
+
+.we-provide h2 {
+  margin: 30px;
+  color: #ff0000;
+  text-decoration: underline black 2px;
+  text-underline-offset: 10px;
+}
+
+.skills_section {
+  width: 100%;
+  height: 100vh;
+  padding: 0px 13%;
+  background-color: rgb(255 235 59 / 15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.skills_head {
+  width: 100%;
+  margin-bottom: 100px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.skills_head h2 {
+  font-size: 30px;
+  margin-bottom: -5px;
+}
+.skills_head h2 span {
+  color: #e74d06;
+}
+.skills_head p {
+  font-size: 20px;
+  margin: 20px;
+  text-decoration: underline;
+  text-underline-offset: 9px;
+}
+
+.skills_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+}
+.skills_main .skill_bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.skill_bar .info p:nth-child(2) {
+  font-weight: 500;
+}
+.skill_bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.144);
+  border-radius: 25px;
+  margin-top: 5px;
+  position: relative;
+}
+.skill_bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: #28e706;
+  border-radius: 25px;
+}
+.skill_bar .bar .html {
+  width: 30%;
+  animation: html 2s;
+}
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+.skill_bar .bar .css {
+  width: 25%;
+  animation: css 2s;
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 25%;
+  }
+}
+.skill_bar .bar .sass {
+  width: 5%;
+  animation: sass 2s;
+}
+@keyframes sass {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .js {
+  width: 20%;
+  animation: js 2s;
+}
+@keyframes js {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+.skill_bar .bar .react {
+  width: 5%;
+  animation: react 2s;
+}
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .node {
+  width: 5%;
+  animation: node 2s;
+}
+@keyframes node {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .express {
+  width: 5%;
+  animation: express 2s;
+}
+@keyframes express {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .mongo {
+  width: 5%;
+  animation: mongo 2s;
+}
+@keyframes mongo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .bash {
+  width: 5%;
+  animation: mongo 2s;
+}
+@keyframes mongo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+.skill_bar .bar .python {
+  width: 5%;
+  animation: mongo 2s;
+}
+@keyframes mongo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+
+.about {
+  padding: 100px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+  height: 90%;
+  /* background-color: #000000; */
+  /* color: white; */
+}
+.about-main {
+  width: 90%;
+}
+
+.about-main h1 {
+  font-size: 35px;
+  font-weight: 10;
+  margin: 20px;
+}
+
+.about-main p {
+  font-size: 25px;
+  font-weight: 50px;
+  margin: 20px;
+  letter-spacing: 2px;
+  line-height: 35px;
+}
+.cap-i {
+  color: #ff3737;
+}
+
+@media screen and (max-width: 1265px){
+ 
+  .intro h2{
+    font-size: 42px;
+    text-transform: uppercase;
+    /* margin: 20px 10px 10px 10px; */
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 49px;
+  
+  }
+
+
+}
+@media screen and (max-width: 1243px){
+ 
+  .intro h2{
+    font-size: 32px;
+    text-transform: uppercase;
+    /* margin: 20px 10px 10px 10px; */
+    /* font-weight: 400; */
+    letter-spacing: 0px;
+    line-height: 49px;
+}
+
+  }
+  @media (max-width: 1133px){
+ 
+    .intro h2{
+      font-size: 34px;
+      text-transform: uppercase;
+      /* margin: 20px 10px 10px 10px; */
+      /* font-weight: 400; */
+      letter-spacing: 0px;
+      line-height: 49px;
+  }
+
+  .name-color {
+    color: #ff0000;
+    font-size: unset;
+  }
+  .name-color2 {
+    color: #ff9100;
+font-size: unset;
+}
+}
+
+@media (max-width:1184px){
+
+.about-main {
+  width: 100%;
+}
+.about-main p {
+  overflow-y: auto;
+  font-size: 25px;
+  font-weight: 50px;
+  margin: 0px;
+  letter-spacing: 0px;
+  line-height: normal;
+}
+.about {
+  overflow:hidden;
+  padding: 100px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+  height: 100%;
+  /* background-color: #000000; */
+  /* color: white; */
+}
+}
+
+
+@media (max-width:1025px){
+.main-home {
+  width: 80vw;
+  height: 40%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.service {
+  width: 80vw;
+  height: 55%;
+  margin: 0px auto 10px auto;
+  padding: 24px auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.skills_section {
+  width: 100%;
+  height: 51vh;
+  padding: 0px 13%;
+  background-color: rgb(255 235 59 / 15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about {
+  overflow: hidden;
+  padding: 38px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+  height: 48%;
+  /* background-color: #000000; */
+  /* color: white; */
+}
+}
+
+
+@media (max-width:821px){
+  .service {
+    width: auto;
+    height: auto;
+    margin: 0px auto 0px auto;
+    padding: 24px auto;
+ border: none;
+}
+.main-home {
+  width: 80vw;
+  height: 35%;
+  margin: 62px auto 0px auto;
+  display: flex;
+  align-items: center;
+}
+.intro h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+  /* margin: 20px 10px 10px 10px; */
+  /* font-weight: 400; */
+  letter-spacing: 0px;
+  line-height: 49px;
+}
+.intro p {
+  margin: 3px 10px 10px 10px;
+  font-size: 21px;
+  color: #ff0000;
+}
+.slider {
+  margin: 0px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* position: relative; */
+  display: flex;
+}
+.navbar ul li {
+  list-style-type: none;
+  margin: 9px;
+  font-size: 22px;
+}
+.we-provide {
+  width: 80vw;
+  margin: 19px auto 20px auto;
+  justify-content: center;
+  display: flex;
+}
+.services-sec h1 {
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 20px 5px;
+  color: #9c007d;
+}
+}
+
+@media (max-width:769px){
+  .about-main p {
+    overflow-y: auto;
+    font-size: 21px;
+    font-weight: 50px;
+    margin: 0px;
+    letter-spacing: 0px;
+    line-height: normal;
+}
+.main-home {
+  width: 80vw;
+  height: 42%;
+  margin: 60px auto;
+  display: flex;
+  align-items: center;
+}
+
+}
+@media (max-width:540px){
+ 
+.main-home {
+  width: 80vw;
+  height:92%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.navbar ul li {
+  list-style-type: none;
+  margin: 5px;
+  font-size: 14px;
+}
+.intro {
+  width: 80%;
+}
+.intro h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+  margin: 20px 10px 10px 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 25px;
+}
+.skills_section {
+
+  height: 70vh;
+
+ 
+}
+.about-main p {
+
+  font-size: 18px;
+ 
+}
+.about{
+  height: 74%;
+}
+
+/* .name-color {
+  color: #ff0000;
+  font-size: 60px;
+}
+.name-color2 {
+  color: #ff9100;
+  font-size: 50px;
+}
+.intro p {
+  margin: 40px 10px 10px 10px;
+  font-size: 25px;
+  color: #ff0000;
+}
+
+/* }  */
+}
+  
+@media (max-width:415px){
+
+  .main-home {
+    width: 100vw;
+    height: 57%;
+    margin: unset;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+.intro h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  /* margin: 20px 10px 10px 10px; */
+  font-weight: 200;
+  letter-spacing: 0px;
+  line-height: 22px;
+}
+.intro h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  /* margin: 20px 10px 10px 10px; */
+  font-weight: 200;
+  letter-spacing: 0px;
+  line-height: 22px;
+}
+.intro p {
+  margin: 3px 10px 10px 10px;
+  font-size: 15px;
+  color: #ff0000;
+}
+.services-sec {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+  row-gap: 20px;
+  /* column-gap: 5px; */
+}
+.skills_main {
+  width: 110%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+}
+.skills_section {
+  width: 100%;
+  height: 63vh;
+  padding: 0px 13%;
+  background-color: rgb(255 235 59 / 15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about {
+  overflow: hidden;
+  padding: 0px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+  margin: auto;
+  height: 55%;
+  /* background-color: #000000; */
+  /* color: white; */
+}
+.about-main p {
+  overflow-y: auto;
+  font-size: 18px;
+  font-weight: 50px;
+  margin: 16px;
+  letter-spacing: 0px;
+  line-height: normal;
+}
+}
+
+@media (max-width:854px){
+
+  .main-home {
+    width: 80vw;
+    height: 29%;
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+}
+.intro h2 {
+  font-size: 19px;
+}
+.service {
+
+  height: 66%;
+ 
+
+}
+}
+@media (max-width:412px){
+  .main-home {
+    width: 80vw;
+    height: 59%;
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+}
+.service {
+  height: 150%;
+}
+.navbar ul {
+  margin-left: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn button {
+  visibility: collapse;
+}
+.ttc button{
+  visibility: visible ;
+}
+
+
+}
+@media (max-width:415px){
+  .service {
+    height: 154%;
+  }
+  .btn button {
+    visibility: collapse;
+  }
+  .main-home {
+    width: 80vw;
+    height: 65%;
+    margin:55px auto 0px auto;
+    display: flex;
+    align-items: center;
+}
+.ttc button{
+  visibility: visible ;
+}
+
+.navbar ul {
+  margin-left: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+@media (max-width:391px){
+  .main-home {
+    width: 80vw;
+    height: 65%;
+    margin: 74px auto 0px auto;
+    display: flex;
+    align-items: center;
+}
+.service {
+  height: 169%;
+}
+.skills_head {
+  width: 100%;
+  margin-bottom: 22px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.navbar ul li {
+  list-style-type: none;
+  margin: 5px;
+  font-size: 13px;
+}
+
+.intro h2 {
+  font-size: 15px;
+}
+
+}
+@media (main-width:375px){
+  .navbar ul li {
+    list-style-type: none;
+    margin: 5px;
+    font-size: 12px;
+}
+.main-home {
+
+  height: 82%;
+ 
+}
+.service {
+  height: 215%;
+}
+.skills_main{
+  grid-template-columns: repeat(1,1fr);
+}
+.skills_section{
+  height: 119vh;
+}
+.about{
+  height: 74%;
+}
+}
+@media (max-width:431px){
+
+  .btn button {
+    visibility: collapse;
+  }
+  .navbar ul li {
+    list-style-type: none;
+    margin: 5px;
+    font-size: 17px;
+}
+.navbar ul {
+  margin-left: 5px;
+}
+.main-home {
+
+  height: 67%;
+
+
+}
+.service {
+  height: 148%;
+}
+.ttc button{
+  visibility: visible ;
+}
+.intro h2 {
+  font-size: 14px;
+  margin-top: 86px;
+}
+.logo{
+  height: 250px !important;
+
+}
+.services-sec{
+  grid-template-columns: repeat(1,1fr);
+}
+
+}
+@media (max-width:361px){
+  .navbar h1 {
+    margin: 0 5px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #f900e0;
+}
+.navbar ul li {
+  list-style-type: none;
+  margin: 5px;
+  font-size: 15px;
+}
+.main-home {
+  height: 76%;
+}
+.service {
+  height: 190%;
+}
+}
+@media (max-width:344px){
+.service {
+  height: 165%;
+}
+.main-home {
+  height: 62%;
+}
+}
     </style>
   </head>
   <body>
-    <div id="card1">
-      <div id="card">
-        <div id="img">
-          <img
-            src="https://imgs.search.brave.com/GJcSODtEMZApHCmhBucQ3jQh3ufISnK6OgTxF1THeCU/rs:fit:860:0:0/g:ce/aHR0cDovL2ltZy1w/bHVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNS8wNC9p/bWFnZTIyOV8wMS01/MTJ4MzYyLmpwZw"
-            alt=""
-          />
-        </div>
-        <div id="capsol">
-          <span>Nature</span>
-          <span>Lake</span>
-        </div>
+    <nav class=" cec navbar">
+      <h1><a href="#home">Hossain</a></h1>
+      <ul class="sec-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="btn">
+        <button><a href="mailto:hossain890m@gmail.com">Work with me</a></button>
+      </div>
+    </nav>
 
-        <div id="content">
-          <h1>Hossain</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-            reprehenderit, rem ad ullam, quasi odit dolorem tempore laborum
-            aliquid consequuntur ducimus! Fugit, accusamus.
-          </p>
-        </div>
-        <div id="btnb">
-          <button>Load more</button>
+    <div id="home" class="main-home">
+      <div class="intro">
+        <h2>
+          Hey, I'm <span class="name-color">hossain khan</span>, <br />
+          turning <span class="name-color2">ideas</span> into digital reality
+          with coding and creativity."
+        </h2>
+        <p>Building digital dreams, one line of code at a time.</p>
+        <div class="btn ttc">
+          <button><a href="mailto:hossain890m@gmail.com">Work with me</a></button>
         </div>
       </div>
-
-      <div id="card">
-        <div id="img">
-          <img
-            src="https://imgs.search.brave.com/GJcSODtEMZApHCmhBucQ3jQh3ufISnK6OgTxF1THeCU/rs:fit:860:0:0/g:ce/aHR0cDovL2ltZy1w/bHVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNS8wNC9p/bWFnZTIyOV8wMS01/MTJ4MzYyLmpwZw"
-            alt=""
-          />
-        </div>
-        <div id="capsol">
-          <span>Nature</span>
-          <span>Lake</span>
-        </div>
-
-        <div id="content">
-          <h1>Hossain</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-            reprehenderit, rem ad ullam, quasi odit dolorem tempore laborum
-            aliquid consequuntur ducimus! Fugit, accusamus.
-          </p>
-        </div>
-        <div id="btnb">
-          <button>Load more</button>
-        </div>
+     
+      <div class="logo">
+        <img
+          src="https://mail.google.com/mail/u/0?ui=2&ik=f6dac90446&attid=0.1&permmsgid=msg-a:r-3320630386274374275&th=18ff95f95be0ac21&view=att&disp=safe&realattid=f_lx6iutjv0"
+          height="300px"
+          alt=""
+        />
       </div>
-      <div id="card">
-        <div id="img">
-          <img
-            src="https://imgs.search.brave.com/GJcSODtEMZApHCmhBucQ3jQh3ufISnK6OgTxF1THeCU/rs:fit:860:0:0/g:ce/aHR0cDovL2ltZy1w/bHVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNS8wNC9p/bWFnZTIyOV8wMS01/MTJ4MzYyLmpwZw"
-            alt=""
-          />
-        </div>
-        <div id="capsol">
-          <span>Nature</span>
-          <span>Lake</span>
-        </div>
+    </div>
 
-        <div id="content">
-          <h1>Hossain</h1>
+    <div class="slider">
+      <div class="main-slide">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>React</li>
+        <li>Express.js</li>
+        <li>Ruby</li>
+        <li>PHP</li>
+        <li>Node.js</li>
+        <li>Bootstrap</li>
+        <li>MongoDB</li>
+        <li>Laravel</li>
+        <li>MySQL</li>
+        <li>Bash</li>
+      </div>
+    </div>
+
+    <div id="services" class="cet">
+      <!-- this is for services section -->
+    </div>
+
+    <div class="service">
+      <div class="we-provide"><h2>OUR SERVICES</h2></div>
+
+      <div class="services-sec">
+        <div class="items-services">
+          <h1>Frontend Web Development</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-            reprehenderit, rem ad ullam, quasi odit dolorem tempore laborum
-            aliquid consequuntur ducimus! Fugit, accusamus.
+            Crafting captivating, user-friendly website interfaces for seamless
+            digital experiences across devices and browsers.
           </p>
         </div>
-        <div id="btnb">
-          <button>Load more</button>
+        <div class="items-services">
+          <h1>Backend development</h1>
+          <p>
+            Architecting server-side solutions for robust data management and
+            seamless website functionality.
+          </p>
+        </div>
+        <div class="items-services">
+          <h1>Full-stack development</h1>
+          <p>
+            Seamlessly integrating frontend and backend technologies to deliver
+            comprehensive web solutions with exceptional user experiences.
+          </p>
+        </div>
+        <div class="items-services">
+          <h1>WordPress development</h1>
+          <p>
+            Customizing and optimizing websites using the versatile and
+            user-friendly WordPress platform for dynamic online presence.
+          </p>
+        </div>
+        <div class="items-services">
+          <h1>SEO Services</h1>
+          <p>
+            Enhancing online visibility and organic search rankings through
+            strategic optimization techniques tailored to your unique business
+            goals.
+          </p>
+        </div>
+        <div class="items-services">
+          <h1>Digital Marketing Services</h1>
+          <p>
+            Crafting comprehensive strategies to drive brand awareness,
+            engagement, and conversion across various online channels for
+            business growth.
+          </p>
         </div>
       </div>
     </div>
+
+    <div id="skills" class="skills_section">
+      <div class="skills_head">
+        <h2>My <span>Skills</span></h2>
+        <p>I believe "Journey of Learning is Endless."</p>
+      </div>
+
+      <div class="skills_main">
+        <div class="skill_bar">
+          <div class="info">
+            <p>HTML</p>
+            <p>30%%</p>
+          </div>
+          <div class="bar">
+            <span class="html"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>CSS</p>
+            <p>20%</p>
+          </div>
+          <div class="bar">
+            <span class="css"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>SASS</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="sass"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>Java Script</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="js"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>React js</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="react"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>Node js</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="node"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>Express js</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="express"></span>
+          </div>
+        </div>
+        <div class="skill_bar">
+          <div class="info">
+            <p>MongoDb</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="mongo"></span>
+          </div>
+        </div>
+
+        <div class="skill_bar">
+          <div class="info">
+            <p>Bash</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="bash"></span>
+          </div>
+        </div>
+
+        <div class="skill_bar">
+          <div class="info">
+            <p>Python</p>
+            <p>loading....</p>
+          </div>
+          <div class="bar">
+            <span class="python"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="about">
+      <div class="about-main">
+        <h1><span class="cap-i">I'm</span> Hossain Khan Jubaer</h1>
+        <p>
+          A tech enthusiast diving deep into web development. I'm all about
+          coding and making websites shine. Currently, I'm exploring various
+          programming languages and SEO to level up my skills. I believe in
+          creating websites that not only look good but also work like a charm.
+          From sleek designs to optimizing performance, I'm on a mission to make
+          the web a better place, one line of code at a time. Challenges? Bring
+          'em on! I see them as chances to grow and learn. Whether it's
+          mastering tricky algorithms or staying ahead of SEO trends, I'm up for
+          it. In this fast-paced tech world, I'm eager to stay on top of the
+          game, using code to shape awesome digital experiences. With passion
+          and dedication, I'm ready to make waves in web development.
+        </p>
+      </div>
+    </div>
+
+   
+
+    <script>
+      var copy = document.querySelector(".main-slide").cloneNode(true);
+      document.querySelector(".slider").appendChild(copy);
+    </script>
   </body>
 </html>
